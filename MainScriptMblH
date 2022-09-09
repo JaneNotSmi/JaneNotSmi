@@ -1,0 +1,40 @@
+local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/shlexware/Orion/main/source')))()
+local Window = OrionLib:MakeWindow({Name = "Key System Advanced", HidePremium = false, SaveConfig = true, IntroText = "Welcome to Mobile Hub"})
+
+
+_G.Key = "637246399pbdz"
+_G.KeyInput = "string"
+
+function Destroy()
+    game:GetService("CoreGui").Orion:Destroy()
+end
+
+function CheckKey()
+    if _G.KeyInput == _G.Key then
+        Destroy()
+        local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/shlexware/Orion/main/source')))()
+        loadstring("\108\111\97\100\115\116\114\105\110\103\40\103\97\109\101\58\72\116\116\112\71\101\116\40\40\39\104\116\116\112\115\58\47\47\114\97\119\46\103\105\116\104\117\98\117\115\101\114\99\111\110\116\101\110\116\46\99\111\109\47\74\97\110\101\78\111\116\83\109\105\47\74\97\110\101\78\111\116\83\109\105\47\109\97\105\110\47\84\114\97\115\104\78\117\98\98\39\41\41\41\40\41\10")()
+    end
+end
+
+local Tab = Window:MakeTab({
+    Name = "Main",
+    Icon = "rbxassetid://4483345998",
+    PremiumOnly = false
+})
+
+Tab:AddTextbox({
+    Name = "Enter Key",
+    Default = "",
+    TextDisappear = true,
+    Callback = function(Value)
+        _G.KeyInput = Value
+    end      
+})
+
+Tab:AddButton({
+    Name = "Check Key",
+    Callback = function()
+          CheckKey()
+      end    
+})
